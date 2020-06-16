@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <title>Lab5</title>
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <link rel="stylesheet" media="screen" href="css/style.css" />
+    <link href="https://fonts.googleapis.com/css?family=Rubik:300,400&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" , href="css/LabStyle.css" />
+</head>
+
+<body>
+    <header class="header">
+        <div class="logo">Лабораторная работа №5<br /><br />Задание 9(2)</div>
+        </div>
+    </header>
+
+    <div id="particles-js">
+        <div class="container">
+            <div class="accordion">
+                <div>
+                    <p class="accordion-title" data-index="0">JavaScript</p>
+                    <div class="accordion-text inv">
+                        <p class="t">JavaScript — прототипно-ориентированный сценарный язык программирования. Является
+                            реализацией
+                            языка ECMAScript.</p>
+                        <p class="t">JavaScript обычно используется как встраиваемый язык для программного доступа к
+                            объектам
+                            приложений. Наиболее широкое применение находит в браузерах как язык сценариев для придания
+                            интерактивности веб-страницам</p>
+                    </div>
+                </div>
+                <div>
+                    <p class="accordion-title" data-index="1">jQuery</p>
+                    <div class="accordion-text inv">
+                        <p class="t">jQuery — библиотека JavaScript, фокусирующаяся на взаимодействии JavaScript и HTML.
+                            Библиотека jQuery помогает легко получать доступ к любому элементу DOM, обращаться к
+                            атрибутам и содержимому элементов DOM, манипулировать ими. Также библиотека jQuery
+                            предоставляет удобный API для работы с AJAX. Сейчас разработка jQuery ведётся командой
+                            jQuery во главе с Джоном Резигом. </p>
+                    </div>
+                </div>
+                <div>
+                    <p class="accordion-title" data-index="2">DOM</p>
+                    <div class="accordion-text inv">
+                        <p class="t">DOM — это не зависящий от платформы и языка программный интерфейс, позволяющий
+                            программам и
+                            скриптам получить доступ к содержимому HTML-, XHTML- и XML-документов, а также изменять
+                            содержимое, структуру и оформление таких документов.</p>
+                    </div>
+                </div>
+                <div>
+                    <p class="accordion-title" data-index="3">CSS</p>
+                    <div class="accordion-text inv">
+                        <p class="t">CSS — формальный язык описания внешнего вида документа, написанного с
+                            использованием языка
+                            разметки.</p>
+                    </div>
+                </div>
+            </div>
+            <script>var accordArr = document.querySelectorAll('div.accordion p.accordion-title');
+                for (var i = 0; i < accordArr.length; i++) {
+                    accordArr[i].addEventListener('click', openAccordion);
+                }
+                var accordTextArr = document.querySelectorAll('div.accordion div.accordion-text');
+                function openAccordion() {
+                    for (var i = 0; i < accordTextArr.length; i++) {
+                        if (!accordTextArr[i].classList.contains('inv')) {
+                            accordTextArr[i].classList.add('inv');
+                            accordArr[i].classList.remove('openAccordion');
+                            accordArr[i].removeEventListener('click', closeAccordion);
+                            accordArr[i].addEventListener('click', openAccordion);
+                        }
+                    }
+                    accordTextArr[this.dataset.index].classList.remove('inv');
+                    this.classList.add('openAccordion');
+                    this.removeEventListener('click', openAccordion);
+                    this.addEventListener('click', closeAccordion);
+                }
+                function closeAccordion() {
+
+                    this.classList.remove('openAccordion');
+                    accordTextArr[this.dataset.index].classList.add('inv');
+                    this.removeEventListener('click', closeAccordion);
+                    this.addEventListener('click', openAccordion);
+                }</script>
+
+            <style>
+                .accordion {
+                    width: 600px;
+                    margin: 0 auto;
+                    padding: 10px;
+                }
+
+                .accordion-title {
+                    font-size: 20px;
+                    background-color: #F6F6F6;
+                    padding: 12px 30px;
+                    border: 1px solid #C5C5C5;
+                    border-radius: 5px;
+                }
+
+                .accordion-title:hover {
+                    cursor: pointer;
+                }
+
+                .accordion-text {
+                    width: 90%;
+                    margin: 0 auto;
+                    text-align: justify;
+                }
+
+                .inv {
+                    display: none;
+                }
+
+                .t,p {
+
+                    font-size: 20px;
+                    font-family: "Rubik", sans-serif;
+                    margin: 15px;
+                }
+
+                .t {
+                    color: white;
+                }
+
+                .openAccordion {
+                    background-color: crimson;
+                    border: 1px solid rgb(238, 90, 119);
+                    color: #fff;
+                }
+            </style>
+        </div>
+    </div>
+    <footer class="footer">
+        <div id="writer">
+            Свирепа Артем Алексеевич <br />
+            КФ-2<br />
+            Вариант 4<br />
+        </div>
+
+
+    </footer>
+    <script src="particles.js"></script>
+    <script src="js/app.js"></script>
+</body>
+
+
+</html>

@@ -1,0 +1,155 @@
+<!DOCTYPE HTML5>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <link rel="stylesheet" media="screen" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css?family=Rubik:300,400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" , href="css/LabStyle.css">
+
+</head>
+
+<body onload="task73(), task75()">
+    <header class="header">
+            <div class="logo">ВИЯ<br />Лабораторная работа №2</div>
+        </div>
+    </header>
+
+    <div class="content" id="particles-js">
+
+        <div class="container">
+            <div class="dropdown">
+                <div class="dropbtn task_c">Задание 1</div>
+                <div class="dropdown-content">
+                    <a class="taskTitle" href="javascript:void(0)" , onclick="task11()">Текущий день</a>
+                    <a class="taskTitle" href="javascript:void(0)" , onclick="task12()">Текущий месяц</a>
+                    <a class="taskTitle" href="javascript:void(0)" , onclick="task13()">Текущий год</a>
+                    <a class="taskTitle" href="javascript:void(0)" , onclick="task14()">Время и Дата</a>
+                </div>
+            </div>
+
+            <div class="dropdown">
+                <div class="task_c">Задание 2</div>
+                <div class="dropdown-content">
+                    <a class="taskTitle" href="javascript:void(0)" , onclick="task21()">Номер дня недели</a>
+                    <a class="taskTitle" href="javascript:void(0)" , onclick="task22()">Текущей день недели</a>
+                    <a class="taskTitle" href="javascript:void(0)" , onclick="task23()">День недели 07.01.2015</a>
+                </div>
+            </div>
+
+            <div class="task">
+                <a class="task_c" href="javascript:void(0)" , onclick="task31()">Задание 3</a>
+            </div>
+            <div class="task">
+                <a class="task_c" href="javascript:void(0)" , onclick="task41()">Задание 4</a>
+            </div>
+            <div class="task">
+                <a class="task_c" href="javascript:void(0)" , onclick="task51()">Задание 5</a>
+            </div>
+            <div class="dropdown">
+                <div class="task_c">Задание 6</div>
+                    <div class="dropdown-content">
+                        <a class="taskTitle" href="javascript:void(0)" , onclick="task61()">Количество секунд до конца дня</a>
+                        <a class="taskTitle" href="#zatemnenie">Дата рождения</a>
+                    </div>
+            </div>
+
+            <div class="dropdown">
+                <div class="dropbtn task_c">Задание 7</div>
+                <div class="dropdown-content">
+                    <a class="taskTitle" href="#zatemnenie2">Отсчет от 0 до бесконечности</a>
+                    <a class="taskTitle" href="#zatemnenie3">Отсчет с остановкой</a>
+                    <a class="taskTitle" href="#zatemnenie4">Часы</a>
+                    <a class="taskTitle" href="#zatemnenie5">Таймер обратного отсчета</a>
+                    <a class="taskTitle" href="#zatemnenie6">Отсчет до полуночи</a>
+                </div>
+            </div>
+        </div>
+
+        <div id="zatemnenie">
+            <div class="okno">
+                <div id="bDay">Введите дату рождения: </div>
+                <input type="text" id="input">
+                <div class="output">До дня рождения осталось: <span id="MYresult"></span></div>
+                <a class="button" href="javascript:void(0)", onclick=task62()>Посчитать</a>
+                <a href="#" class="close">Закрыть окно</a>
+            </div>
+        </div> 
+
+        <div id="zatemnenie2">
+            <div class="okno">
+                
+                <div id="output2">Отсчет: <span class="MYresult2">0</span></div>
+                <a class="button" href="javascript:void(0)", onclick=task71()>Начать отсчет</a>
+                <a href="#" class="close">Закрыть окно</a>
+            </div>
+        </div> 
+
+        <div id="zatemnenie3">
+            <div class="okno">
+                
+                <div id="output2">Отсчет: <span class="MYresult3">0</span></div>
+                <button class="button2" href="javascript:void(0)", onclick=task72_start()>Начать отсчет</button>
+                <button class="button2" href="javascript:void(0)", onclick=task72_stop()>Закончить отсчет</button>
+                <a href="#" class="close2">Закрыть окно</a>
+            </div>
+        </div> 
+    </div>
+
+    <div id="zatemnenie4">
+        <div class="okno">
+            
+            <div id="output2"><span class="MYresult4"></span></div>
+            <a href="#" class="close2">Закрыть окно</a>
+        </div>
+    </div> 
+</div>
+
+<div id="zatemnenie5">
+    <div class="okno">
+        
+        <div id="output2">Отсчет: <span class="MYresult5">10</span></div>
+        <!-- <p class="container_countdown">ПУСК!</p> -->
+        <button class="button2" href="javascript:void(0)", onclick=task74()>Начать отсчет</button>
+        <!-- <button class="button2" href="javascript:void(0)", onclick=task72_stop()>Закончить отсчет</button> -->
+        <a href="#" class="close2">Закрыть окно</a>
+    </div>
+</div> 
+
+<div id="zatemnenie6">
+    <div class="okno">
+        <table id="table">
+            <thead>
+            <tr>До полуночи осталось:</tr>
+            </thead>
+            <tr>
+            <td>Часы</td>
+            <td>Минуты</td>
+            <td>Секунды</td>
+            </tr>
+            <tr>		
+            <td class="hours time"></td>
+            <td class="minutes time"></td>
+            <td class="seconds time"></td>
+            </tr>
+            </table>
+        <a href="#" class="close2">Закрыть окно</a>
+    </div>
+</div> 
+</div>
+    <footer class="footer">
+            <div id="writer">
+                Свирепа Артем Алексеевич <br />
+                КФ-2<br />
+                Вариант 4<br />
+            </div>
+        
+
+    </footer>
+    <script src="js/jsScript.js"></script>
+    <script src="particles.js"></script>
+<script src="js/app.js"></script>
+</body>
+
+</html>

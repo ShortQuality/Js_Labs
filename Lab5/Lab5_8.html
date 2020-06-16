@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <title>Задание 8</title>
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <link rel="stylesheet" media="screen" href="css/style.css" />
+    <link href="https://fonts.googleapis.com/css?family=Rubik:300,400&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" , href="css/LabStyle.css" />
+</head>
+
+<body>
+    <header class="header">
+        <div class="logo">Лабораторная работа №5<br /><br />Задание 8</div>
+        </div>
+    </header>
+
+    <div id="particles-js">
+        <div class="container">
+            <table>
+                <tr>
+                    <td colspan="5"><span id="info"></span></td>
+                    <td colspan="2"><a href="#" id="previous">&larr;</a>&nbsp;<a href="#" id="next">&rarr;</a></td>
+                </tr>
+                <tr>
+                    <th>ПН</th>
+                    <th>ВТ</th>
+                    <th>СР</th>
+                    <th>ЧТ</th>
+                    <th>ПТ</th>
+                    <th>СБ</th>
+                    <th>ВС</th>
+                </tr>
+            </table>
+            <script>
+                var data = new Date(),
+                    arr = ['Январь', 'Февраль', 'Март', 'Апрель', 'Май', 'Июнь', 'Июль', 'Август', 'Сентябрь', 'Октябрь', 'Ноябрь', 'Двекабрь'];
+                var info = document.getElementById('info');
+                var calendar = document.querySelector('table'),
+                    previous = document.getElementById('previous');
+                previous.addEventListener('click', loadPrev);
+                var next = document.getElementById('next');
+                next.addEventListener('click', loadNext);
+                function loadPrev() {
+                    data = new Date(data.getFullYear(), (data.getMonth() - 1), 1);
+                    loadMonth(data.getFullYear(), data.getMonth());
+                }
+                function loadNext() {
+                    data = new Date(data.getFullYear(), (data.getMonth() + 1), 1);
+                    loadMonth(data.getFullYear(), data.getMonth());
+                }
+                function loadMonth(year, month) {
+                    var tmp = document.querySelectorAll('tr.new');
+                    for (var i = 0; i < tmp.length; i++) {
+                        tmp[i].parentElement.removeChild(tmp[i]);
+                    }
+                    info.innerHTML = data.getFullYear() + ' ' + arr[data.getMonth()];
+                    var d = 33 - new Date(year, month, 33).getDate();
+                    var prime = (new Date(data.getFullYear(), data.getMonth(), 1).getDay()) - 1;
+                    if (prime == -1) {
+                        prime = 6;
+                    }
+                    var colTr = Math.ceil((d + prime) / 7);
+                    for (var i = 0, tmpD = 1; i < colTr; i++) {
+                        var newTr = document.createElement('tr');
+                        newTr.classList.add('new');
+                        for (var j = 0; j < 7; j++) {
+                            var newSpan = document.createElement('span');
+                            if (j >= prime || tmpD >= 2) {
+                                if (tmpD <= d) {
+                                    newSpan.innerHTML = tmpD;
+                                    if (tmpD == new Date().getDate() && data.getMonth() == new Date().getMonth() && data.getFullYear() == new Date().getFullYear()) {
+                                        newSpan.classList.add('now');
+                                    }
+                                }
+                                tmpD++;
+                            }
+                            if (j == 5 || j == 6) {
+                                newSpan.classList.add('red');
+                            }
+                            var newTd = document.createElement('td');
+                            if (newSpan.innerHTML) {
+                                newTd.appendChild(newSpan);
+                            }
+                            newTr.appendChild(newTd);
+                        }
+                        calendar.appendChild(newTr);
+                    }
+                }
+                function loadNow() {
+                    loadMonth(data.getFullYear(), data.getMonth());
+                }
+                window.onload = loadNow();
+            </script>
+            <style>
+                body {
+                    text-align: center;
+                }
+
+                table {
+                    margin: 0 auto;
+                    border-spacing: 0;
+                    border: 1px solid #000;
+                    text-align: center;
+                    box-shadow: 0 0 22px 1px white;
+                }
+
+                td {
+                    padding: 6px;
+                    background-color: slategray;
+                }
+
+                th {
+                    background-color: crimson;
+                    color: white;
+                    border-top: 1px solid #999;
+                    border-bottom: 1px solid #999;
+                    padding: 8px;
+                }
+
+                a {
+                    color: crimson;
+                    margin: 0;
+                    padding: 0;
+                    font-size: 100%;
+                    vertical-align: baseline;
+                    background: transparent;
+                    text-decoration: none;
+                }
+
+                td a {
+                    text-decoration: none;
+                }
+
+                .now {
+                    background-color: crimson;
+                }
+
+                td span {
+                    padding: 5px 7px;
+                    color: white;
+                }
+
+                td span:hover {
+                    cursor: pointer;
+                    background-color: #000;
+                    color: #fff;
+                }
+
+                #info {
+                    float: left;
+                }
+
+                #info:hover {
+                    background-color: #fff;
+                    color: #000;
+                }
+
+
+                .red:hover {
+                    background-color: red;
+                }
+            </style>
+        </div>
+    </div>
+    <footer class="footer">
+        <div id="writer">
+            Свирепа Артем Алексеевич <br />
+            КФ-2<br />
+            Вариант 4<br />
+        </div>
+
+
+    </footer>
+    <script src="particles.js"></script>
+    <script src="js/app.js"></script>
+</body>
+
+
+</html>

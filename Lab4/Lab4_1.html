@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <title>Задание 1</title>
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <link rel="stylesheet" media="screen" href="css/style.css" />
+    <link rel="stylesheet" media="screen" href="css/task1.css" />
+
+    <link href="https://fonts.googleapis.com/css?family=Rubik:300,400&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" , href="css/LabStyle.css" />
+</head>
+
+<body>
+    <header class="header">
+        <div class="logo">Лабораторная работа №4<br /><br />Задание 1</div>
+        </div>
+    </header>
+
+    <div id="particles-js">
+        <div id="textContainer">
+            <h1 id="taskText">
+                Дан инпут. В него вводится ФИО через пробел. По потери фокуса запишите фамилию, имя и отчество в
+                отдельные инпуты.
+            </h1>
+        </div>
+
+        <div class="containerElem">
+
+            <input type="text" id="input" placeholder="Введите Ваши ФИО">
+            <input type="text" class="name">
+            <input type="text" class="name">
+            <input type="text" class="name">
+            <script>
+                var elem = document.getElementById('input');
+                elem.addEventListener('focus', func);
+                elem.addEventListener('blur', func2);
+
+                function func() {
+                    elem.placeholder = '';
+                }
+
+                function func2() {
+                    var elem = document.getElementById('input');
+                    var elems = document.getElementsByClassName('name');
+                    if (elem.value !== 0) {
+                        var str = elem.value;
+                        var arr = str.split(' ');
+                        for (var i = 0; i < arr.length; i++) {
+                            elems[i].value = arr[i];
+                        }
+                    }
+                    if (elem.value == 0) {
+                        elem.placeholder = 'Введите Ваши ФИО';
+                        for (var i = 0; i < elems.length; i++) {
+                            elems[i].value = '';
+                        }
+                    }
+                }        
+            </script>
+        </div>
+
+    </div>
+
+    <footer class="footer">
+        <div id="writer">
+            Свирепа Артем Алексеевич <br />
+            КФ-2<br />
+            Вариант 4<br />
+        </div>
+
+        <script src="particles.js"></script>
+        <script src="js/app.js"></script>
+</body>
+
+</html>

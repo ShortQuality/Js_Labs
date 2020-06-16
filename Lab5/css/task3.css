@@ -1,0 +1,51 @@
+.containerElem {
+  position: absolute;
+  top: 45%;
+  left: 45%;
+}
+
+p {
+  left: 43px;
+  width: 72px;
+  position: relative;
+  font-family: "Rubik", sans-serif;
+  color: #ffffffe3;
+  text-shadow: 0px 5px 39px rgb(255, 255, 255);
+  font-size: 20px;
+  text-decoration: none;
+  margin: 10px;
+  -moz-user-select: none; /* Mozilla Firefox */
+  -ms-user-select: none; /* Internet Explorer (не поддерживается) */
+  -o-user-select: none; /* Opera Presto (не поддерживается) */
+  -webkit-user-select: none; /* Google Chrome, Opera Next, Safari */
+}
+
+p:hover {
+  color: rgb(126, 126, 126);
+  cursor: default;
+}
+
+input[type="text"] {
+  border: 0;
+  outline: none;
+  border-radius: 10px;
+  box-shadow: 0 0 60px 1px white;
+  padding: 10px;
+  margin: 2% 1%;
+}
+
+#textContainer {
+  width: 600px;
+  height: 100px;
+  position: absolute;
+  top: 30%;
+  left: 33%;
+}
+
+#taskText {
+  position: absolute;
+  font-family: "Rubik", sans-serif;
+  font-size: 25px;
+  color: white;
+  text-shadow: 0px 5px 39px rgb(255, 255, 255);
+}

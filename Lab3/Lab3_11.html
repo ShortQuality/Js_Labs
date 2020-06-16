@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <title>Задание 11</title>
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <link rel="stylesheet" media="screen" href="css/style.css" />
+    <link rel="stylesheet" media="screen" href="css/task11.css" />
+
+    <link href="https://fonts.googleapis.com/css?family=Rubik:300,400&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" , href="css/LabStyle.css" />
+</head>
+
+<body>
+    <header class="header">
+        <div class="logo">Лабораторная работа №3<br /><br />Задание 11</div>
+        </div>
+    </header>
+
+    <div id="particles-js">
+
+        <div class="containerElem">
+            <div class="elem1" onclick="task111()">Press</div>
+            <ul class="elem1" id="parent1">Parent
+                <li class="elem1" id="child">Тестовый элемент 1</li>
+            </ul>
+
+            <div class="elem2" onclick="task112()">Press</div>
+            <ol class="elem2" id="parent2">Parent
+                <li class="elem2">Тестовый элемент 1</li>
+                <li class="elem2">Тестовый элемент 2</li>
+                <li class="elem2">Тестовый элемент 3</li>
+            </ol>
+
+            <div class="elem3">Ol</div>
+            <ol class="elem3" id="parent3">
+                <li class="elem3">Тестовый элемент 1</li>
+                <li class="elem3" onclick="task113()" id="child3">Тестовый элемент 2</li>
+            </ol>
+
+            <div class="elem4"></div>
+            <ol class="elem4" id="parent4">Parent
+                <li class="elem4">Тестовый элемент 1</li>
+                <li class="elem4">Тестовый элемент 2</li>
+                <li class="elem4">Тестовый элемент 3</li>
+                <script>
+                    let parent = document.querySelector('#parent4');
+                    let elemList = parent.children;
+                    for (let i = 0; i < elemList.length; i++) {
+                        elemList[i].addEventListener('click', function () {
+                            this.parentElement.removeChild(this);
+                        });
+                    }</script>
+            </ol>
+
+            <div>
+                <input type="text" id='text'>
+                </div>
+                <input type="submit" id='submit' onclick="task115()">
+        </div>
+    </div>
+
+
+    <footer class="footer">
+        <div id="writer">
+            Свирепа Артем Алексеевич <br />
+            КФ-2<br />
+            Вариант 4<br />
+        </div>
+    </footer>
+    <script src="js/js11.js"></script>
+    <script src="particles.js"></script>
+    <script src="js/app.js"></script>
+</body>
+
+</html>

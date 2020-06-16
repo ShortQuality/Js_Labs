@@ -1,0 +1,29 @@
+
+
+.containerElem
+{
+  position: absolute;
+  top: 25%;
+  left: 10%;
+}
+
+#elem1{
+    position: relative;
+    font-family: "Rubik", sans-serif;
+    color: #ff3737e3;
+    font-size: 35px;
+    text-decoration: none;
+}
+
+.button
+{
+    position: relative;
+    font-family: "Rubik", sans-serif;
+    color: #f2f2f2e3;
+    font-size: 20px;
+    text-decoration: none;
+    padding: 5px;
+}
+.button:hover{
+    color: rgb(126, 126, 126);
+}

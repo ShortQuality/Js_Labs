@@ -1,0 +1,32 @@
+.containerElem
+{
+  position: absolute;
+  top: 50%;
+  left: 43%;
+}
+
+#text{
+    position: relative;
+    font-family: "Rubik", sans-serif;
+    color: #ffffffe3;
+    font-size: 46px;
+    text-decoration: none;
+    padding: 5px;
+   
+}
+
+#textContainer {
+  width: 600px;
+  height: 100px;
+  position: absolute;
+  top: 30%;
+  left: 33%;
+}
+
+#taskText {
+  position: absolute;
+  font-family: "Rubik", sans-serif;
+  font-size: 25px;
+  color: white;
+  text-shadow: 0px 5px 39px rgb(255, 255, 255);
+}

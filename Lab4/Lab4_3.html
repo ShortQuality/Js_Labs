@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <title>Задание 3</title>
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <link rel="stylesheet" media="screen" href="css/style.css" />
+    <link rel="stylesheet" href="css/task3.css">
+
+    <link href="https://fonts.googleapis.com/css?family=Rubik:300,400&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" , href="css/LabStyle.css" />
+</head>
+
+<body>
+    <header class="header">
+        <div class="logo">Лабораторная работа №4<br /><br />Задание 3</div>
+        </div>
+    </header>
+
+    <div id="particles-js">
+        <div id="textContainer">
+            <h1 id="taskText">
+                Дан инпут. Даны абзацы. Пусть в этот инпут записывается суммарное количество нажатий по этим абзацам. 
+            </h1>
+        </div>
+        <div class="containerElem">
+            <p>Текст 1</p>
+            <p>Текст 2</p>
+            <p>Текст 3</p>
+            <input type="text" value="" id="result">
+            <script>
+                var inp = document.getElementById('result');
+                var p = document.getElementsByTagName('p');
+                for (var i = 0; i < p.length; i++) {
+                    p[i].addEventListener('click', func);
+                }
+
+                var count = 0;
+                function func() {
+                    count++;
+                    inp.value = count;
+                } 
+            </script>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <div id="writer">
+            Свирепа Артем Алексеевич <br />
+            КФ-2<br />
+            Вариант 4<br />
+        </div>
+        <script src="particles.js"></script>
+        <script src="js/app.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <title>Задание 2</title>
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <link rel="stylesheet" media="screen" href="css/style.css" />
+    <link href="https://fonts.googleapis.com/css?family=Rubik:300,400&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" , href="css/LabStyle.css" />
+</head>
+
+<body>
+    <header class="header">
+        <div class="logo">Лабораторная работа №5<br /><br />Задание 2</div>
+        </div>
+    </header>
+
+    <div id="particles-js">
+        <div class="container">
+            <div class="main">
+                <table class="game">
+                    <tr>
+                        <td data-index="0"></td>
+                        <td data-index="1"></td>
+                        <td data-index="2"></td>
+                    </tr>
+                    <tr>
+                        <td data-index="3"></td>
+                        <td data-index="4"></td>
+                        <td data-index="5"></td>
+                    </tr>
+                    <tr>
+                        <td data-index="6"></td>
+                        <td data-index="7"></td>
+                        <td data-index="8"></td>
+                    </tr>
+                </table>
+                <p class="turn"></p>
+                <button id="start">Начать сначала</button>
+            </div>
+
+            <div class="result">
+                <p>Выиграл х: <b>0</b></p>
+                <p>Выиграл 0: <b>0</b></p>
+                <p>Ничья: <b>0</b></p>
+            </div>
+            <script>var elems = document.querySelectorAll('table.game td');
+                elemsAddEL(true);
+                var res = document.querySelectorAll('.result p');
+                res.innerHTML = 'Выиграл ' + gamer;
+                var gamer = 'X';
+                var turn = document.querySelector('p.turn');
+                turn.innerHTML = 'Ходит: X';
+                var btn = document.getElementById('start');
+                btn.addEventListener('click', startFunc);
+                var jH = 0;
+                var jx = 0;
+                var j0 = 0;
+                var jn = 0;
+                function startFunc() {
+                    jH = 0;
+                    elemsAddEL(true);
+                    turn.innerHTML = 'Ходит: ' + gamer;
+                }
+                function elemsAddEL(yn) {
+                    if (yn) {
+                        for (var i = 0; i < elems.length; i++) {
+                            elems[i].addEventListener('click', newGame);
+                            elems[i].innerHTML = '';
+                        }
+                    }
+                    else {
+                        for (var i = 0; i < elems.length; i++) {
+                            elems[i].removeEventListener('click', newGame);
+                        }
+                    }
+                }
+                function newGame() {
+                    elems[this.dataset.index].innerHTML = gamer;
+                    elems[this.dataset.index].removeEventListener('click', newGame);
+                    if (controlFunc(gamer)) {
+                        elemsAddEL(false);
+                        turn.innerHTML = 'Выиграл ' + gamer;
+                        showResult(gamer);
+                    }
+                    else if (gamer == 'X') {
+                        gamer = 'O';
+                        turn.innerHTML = 'Ходит: O';
+                    }
+                    else {
+                        gamer = 'X';
+                        turn.innerHTML = 'Ходит: X';
+                    }
+                    jH++;
+                    if (jH == 9) {
+                        turn.innerHTML = 'Ничья';
+                        jn++;
+                        res[2].innerHTML = 'Ничья: <b>' + jn + '</b>';
+                    }
+
+                }
+
+                function showResult(g) {
+                    if (g == 'X') {
+                        jx++;
+                        res[0].innerHTML = 'Выиграл X: <b>' + jx + '</b>';
+                    }
+                    else {
+                        j0++;
+                        res[1].innerHTML = 'Выиграл O: <b>' + j0 + '</b>';
+                    }
+                }
+                function controlFunc(a) {
+                    if ((elems[0].innerHTML == a && elems[1].innerHTML == a && elems[2].innerHTML == a) ||
+                        (elems[3].innerHTML == a && elems[4].innerHTML == a && elems[5].innerHTML == a) ||
+                        (elems[6].innerHTML == a && elems[7].innerHTML == a && elems[8].innerHTML == a) ||
+                        (elems[0].innerHTML == a && elems[3].innerHTML == a && elems[6].innerHTML == a) ||
+                        (elems[1].innerHTML == a && elems[4].innerHTML == a && elems[7].innerHTML == a) ||
+                        (elems[2].innerHTML == a && elems[5].innerHTML == a && elems[8].innerHTML == a) ||
+                        (elems[0].innerHTML == a && elems[4].innerHTML == a && elems[8].innerHTML == a) ||
+                        (elems[2].innerHTML == a && elems[4].innerHTML == a && elems[6].innerHTML == a)) {
+                        return true;
+                    }
+                    else return false;
+                }</script>
+            <style>
+                .main {
+                    text-align: center;
+                    margin-top: 50px;
+                }
+
+                .result {
+                    position: absolute;
+                    top: 50px;
+                    right: 220px;
+                    width: 130px;
+                    height: 120px;
+                    border: 1px solid #ffffff;
+                    padding: 10px;
+                }
+
+                p {
+                    color: white;
+                }
+
+                b {
+                    color: white;
+                }
+
+                table {
+                    border: 1px solid rgb(255, 255, 255);
+                    border-spacing: 0;
+
+                    margin: 0 auto;
+                }
+
+                td {
+                    width: 60px;
+                    height: 60px;
+                    color: white;
+                    text-align: center;
+                    vertical-align: middle;
+                    border: 1px solid rgb(255, 255, 255);
+                }
+
+                .container {
+                    position: absolute;
+                    top: 25%;
+                    left: 42%;
+                }
+
+                .start {
+                    margin: 0 auto;
+                }
+            </style>
+
+        </div>
+    </div>
+    <footer class="footer">
+        <div id="writer">
+            Свирепа Артем Алексеевич <br />
+            КФ-2<br />
+            Вариант 4<br />
+        </div>
+
+
+    </footer>
+    <script src="particles.js"></script>
+    <script src="js/app.js"></script>
+</body>
+
+
+</html>

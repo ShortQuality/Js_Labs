@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <title>Задание 3</title>
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <link rel="stylesheet" media="screen" href="css/style.css" />
+    <link href="https://fonts.googleapis.com/css?family=Rubik:300,400&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" , href="css/LabStyle.css" />
+</head>
+
+<body>
+    <header class="header">
+        <div class="logo">Лабораторная работа №5<br /><br />Задание 3</div>
+        </div>
+    </header>
+
+    <div id="particles-js">
+        <div class="container">
+            <ul class="test">
+                <li>JavaScript это тоже самое что и Java?
+                <ul>
+                <li><input type="radio" name="case1">Нет.</li>
+                <li><input type="radio" name="case1">Да.</li>
+                <li><input type="radio" name="case1">Когда как</li>
+                </ul>
+                </li>
+                <li>Сколько параментров можно передавать в фукнцию?
+                <ul>
+                <li><input type="radio" name="case2">Только столько, сколько указано при ее созданиию</li>
+                <li><input type="radio" name="case2">Минимум 1.</li>
+                <li><input type="radio" name="case2">Сколько угодно.</li>
+                </ul>
+                </li>
+                <li>Что такое: "use strict"?
+                <ul>
+                <li><input type="radio" name="case3">Просто строка</li>
+                <li><input type="radio" name="case3">Фукцния</li>
+                <li><input type="radio" name="case3">Строгий режим</li>
+                </ul>
+                </li>
+                </ul>
+                <input id="check" type="submit" value="Проверить">
+                <script>var check = document.getElementById('check');
+                    check.addEventListener('click', checkIt);
+                    var elems = document.querySelectorAll('ul.test input');
+                    var answ = ['true', 'false', 'false', 'false', 'false', 'true', 'false', 'false', 'true'];
+                    function checkIt(){
+                    var resPlus = 0,
+                    resMinus = 0;
+                    for (var i=0; i<elems.length; i++){
+                    if (elems[i].checked && answ[i] == 'true'){
+                    resPlus++;
+                    }
+                    else if (elems[i].checked && answ[i] === 'false'){
+                    resMinus++;
+                    }
+                    }
+                    var pr = Math.round(resPlus*100/3);
+                    var x = 3 - resMinus - resPlus;
+                    alert('Правильных ответов: ' + resPlus + ' \(' + pr + '\%\)' + '\nНеправильных ответов: ' + resMinus + '\nБез ответов: ' + x);
+                    }</script>
+                    <style>
+                        li{
+                            color:white;
+                            margin: 10px;
+                        }
+                    </style>
+        </div>
+    </div>
+    <footer class="footer">
+        <div id="writer">
+            Свирепа Артем Алексеевич <br />
+            КФ-2<br />
+            Вариант 4<br />
+        </div>
+
+
+    </footer>
+    <script src="particles.js"></script>
+    <script src="js/app.js"></script>
+</body>
+
+
+</html>

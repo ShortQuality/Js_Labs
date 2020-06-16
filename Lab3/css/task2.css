@@ -1,0 +1,18 @@
+.containerElem
+{
+  position: absolute;
+  top: 25%;
+  left: 10%;
+}
+
+#elem1{
+    position: relative;
+    font-family: "Rubik", sans-serif;
+    color: #ffffffe3;
+    font-size: 15px;
+    text-decoration: none;
+}
+
+#elem1:hover{
+    color: rgb(126,126,126);
+}

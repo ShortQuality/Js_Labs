@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <title>Задание 4</title>
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <link rel="stylesheet" media="screen" href="css/style.css" />
+    <link rel="stylesheet" media="screen" href="css/task4.css" />
+
+    <link href="https://fonts.googleapis.com/css?family=Rubik:300,400&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" , href="css/LabStyle.css" />
+</head>
+
+<body>
+    <header class="header">
+        <div class="logo">Лабораторная работа №4<br /><br />Задание 4</div>
+        </div>
+    </header>
+
+    <div id="particles-js">
+        <div id="textContainer">
+            <h1 id="taskText">
+                Дан абзац. Сделайте так, чтобы каждую секунду он менял свой цвет с красного на зеленый и наоборот.
+            </h1>
+        </div>
+        <div class="containerElem">
+            <p id="text">Javascript</p>
+            <script>
+                var p = document.getElementById('text');
+                window.setInterval(func, 1000);
+
+                function func() {
+                    if (p.style.color == 'red') {
+                        p.style.color = 'green';
+                        p.style.cssText = "color:green; text-shadow: 0px 5px 39px green;";
+                    } else {
+                        p.style.color = 'red';
+                        p.style.cssText = "color: red; text-shadow: 0px 5px 39px red;";
+                    }
+                }   
+            </script>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <div id="writer">
+            Свирепа Артем Алексеевич <br />
+            КФ-2<br />
+            Вариант 4<br />
+        </div>
+        <script src="particles.js"></script>
+        <script src="js/app.js"></script>
+</body>
+
+</html>

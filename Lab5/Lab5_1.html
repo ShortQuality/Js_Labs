@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <title>Задание 1</title>
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <link rel="stylesheet" media="screen" href="css/style.css" />
+    <link href="https://fonts.googleapis.com/css?family=Rubik:300,400&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" , href="css/LabStyle.css" />
+</head>
+
+<body>
+    <header class="header">
+        <div class="logo">Лабораторная работа №5<br /><br />Задание 1</div>
+        </div>
+    </header>
+
+    <div id="particles-js">
+        <div class="container">
+            <div id="calc-wrap">
+                <div id="calc">
+                    <textarea id=inputVal>0</textarea>
+                </div>
+            </div>
+            <script>
+                // код начнёт выполняться после загрузки страницы
+                // когда окно загрузится, сработает метод window.onLoad
+                window.addEventListener('load', function OnWindowLoaded() {
+                    // набор кнопок
+                    var signs = [
+                        '1', '2', '3', '+',
+                        '4', '5', '6', '-',
+                        '7', '8', '9', '/',
+                        '0', '=', '.', 'c'
+                    ];
+                 
+                    // форма калькулятора
+                    var calc = document.getElementById('calc');
+                 
+                    // текстовое поле с математическим выражением
+                    var textArea = document.getElementById('inputVal');
+                 
+                    // Добавление кнопок к форме калькулятора
+                    signs.forEach(function (sign) {
+                        var signElement = document.createElement('div');
+                        signElement.className = 'btn';
+                        signElement.innerHTML = sign;
+                        calc.appendChild(signElement);
+                    });
+                 
+                    // проходит по всем кнопкам калькулятора
+                    // добавляет обработчик на клик
+                    document.querySelectorAll('#calc-wrap .btn').forEach(function (button) {
+                        // Добавляем действие, выполняемое при клике на любую кнопку
+                        button.addEventListener('click', onButtonClick);
+                    });
+                 
+                    // функция клика по кнопке калькулятора
+                    function onButtonClick(e) {
+                        // e - MouseEvent (содержит информацию о клике)
+                        if (e.target.innerHTML === 'c') {
+                            // Если нажата кнопка "с", то стирает все из текстового поля
+                            textArea.innerHTML = '0';
+                        } else if (e.target.innerHTML === '=') {
+                            // Если нажата кнопка "=", то, приведя выражение
+                            // в текстовом поле к javascript, вычислить значение
+                            textArea.innerHTML = eval(textArea.innerHTML);
+                        } else if (textArea.innerHTML === '0') {
+                            // Если textarea содержит только "0", то
+                            // стереть "0" и записать
+                            // значения кнопки в текстовое поле
+                            textArea.innerHTML = e.target.innerHTML;
+                        } else {
+                            // Добавление значения кнопки в текстовое поле
+                            textArea.innerHTML += e.target.innerHTML;
+                        }
+                    }
+                });
+                </script>
+                <style>
+                    .btn {
+                        width: 60px;
+                        height: 60px;
+                        background: #fc0;
+                        display: inline-block;
+                        text-align: center;
+                        line-height: 60px;
+                        user-select: none;
+                    }
+                 
+                    .btn:hover {
+                        background: #f70;
+                        color: #fff;
+                    }
+                 
+                    #calc-wrap {
+                        padding: 10px;
+                        width: 100%;
+                        text-align: center;
+                        /* background: #eee; */
+                    }
+                 
+                    #calc {
+                        width: 240px;
+                        display: inline-block;
+                    }
+                 
+                    #inputVal {
+                        width: 236px;
+                        border: 0;
+                        font-size: 16px;
+                        resize: vertical;
+                    }
+                </style>
+        </div>
+    </div>
+    <footer class="footer">
+        <div id="writer">
+            Свирепа Артем Алексеевич <br />
+            КФ-2<br />
+            Вариант 4<br />
+        </div>
+
+
+    </footer>
+    <script src="particles.js"></script>
+    <script src="js/app.js"></script>
+</body>
+
+
+</html>

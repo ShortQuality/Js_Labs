@@ -1,0 +1,42 @@
+.containerElem
+{
+  position: absolute;
+  top: 25%;
+  left: 10%;
+}
+
+.elem1{
+    position: relative;
+    font-family: "Rubik", sans-serif;
+    color: #74ff4ae3;
+    font-size: 20px;
+    text-decoration: none;
+    padding: 5px;
+}
+
+.elem11{
+    position: relative;
+    font-family: "Rubik", sans-serif;
+    color: #ff3131e3;
+    font-size: 20px;
+    text-decoration: none;
+    padding: 5px;
+}
+
+.elem11:hover{
+    cursor: default;
+    color: rgb(126,126,126);
+}
+
+.elem2{
+    position: relative;
+    font-family: "Rubik", sans-serif;
+    color: #ffd000e3;
+    font-size: 20px;
+    text-decoration: none;
+    padding: 5px;
+}
+
+
+
+

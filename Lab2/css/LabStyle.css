@@ -1,0 +1,353 @@
+.header {
+  position: relative;
+  background-color:rgba(63, 63, 63, 0.24);
+  height: 120px;
+  width: 100%;
+  top: 0;
+}
+.logo {
+  font-family: "Rubik", sans-serif;
+  font-size: medium;
+  position: absolute;
+  margin: 0 auto;
+  color: rgb(255, 255, 255);
+  left: 5%;
+    top: 30%;
+}
+
+body {
+  margin: 0;
+}
+.container {
+  position: absolute;
+  top: 35%;
+  
+  left: 5%;
+}
+.content {
+  margin: 0;
+  padding: 0;
+  min-height: calc(100vh - 220px);
+}
+.footer {
+  position: relative;
+  background-color: rgba(63, 63, 63, 0.24);
+  height: 100px;
+  width: 100%;
+}
+#writer {
+  font-family: "Rubik", sans-serif;
+  position: absolute;
+  font-size: medium;
+
+  margin: 0 auto;
+  color: rgb(255, 255, 255);
+  right: 10%;
+  bottom: 20;
+}
+.taskTitle {
+  font-family: "Rubik", sans-serif;
+  color: rgb(32, 32, 32);
+  text-decoration: none;
+  font-size: 15px;
+}
+.task_c {
+  width: 130;
+  position: relative;
+  margin-left: 5%;
+  font-family: "Rubik", sans-serif;
+  color:  #f2f2f2e3;
+  font-size: 25px;
+  text-decoration: none;
+}
+/* .task a
+{
+    
+    font-family: 'Rubik', sans-serif;
+    color: rgb(32, 32, 32);
+    font-size: 25px;
+    text-decoration: none;
+    
+    padding: auto auto;
+} */
+.task {
+  position: relative;
+  margin-left: 5%;
+  width: 135;
+  display: block;
+  margin-bottom: 35px;
+}
+.task_c:hover {
+  color: rgb(126, 126, 126);
+}
+.task a:hover {
+  color: rgb(126, 126, 126);
+}
+
+.dropdown {
+  position: relative;
+  margin-left: 5%;
+  width: 130;
+  display: block;
+  margin-bottom: 35px;
+}
+
+/* Dropdown Content (Hidden by Default) */
+.dropdown-content {
+  left: 5%;
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 200px;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+}
+
+/* Links inside the dropdown */
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+/* Change color of dropdown links on hover */
+.dropdown-content a:hover {
+  background-color: #f1f1f1;
+}
+
+/* Show the dropdown menu on hover */
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+/* Change the background color of the dropdown button when the dropdown content is shown */
+/* .dropdown:hover .dropbtn {
+    background-color: #3e8e41;
+  } */
+#zatemnenie {
+  background: rgba(102, 102, 102, 0.5);
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: none;
+  
+}
+.okno {
+  width: 500px;
+  height: 300px;
+  text-align: center;
+
+  padding: 15px;
+  border: 3px solid rgb(32, 32, 32);
+  border-radius: 10px;
+  /* color: #0000cc; */
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  margin: auto;
+  background: #fff;
+}
+#zatemnenie:target {
+  display: block;
+}
+#zatemnenie2 {
+  background: rgba(102, 102, 102, 0.5);
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: none;
+}
+#zatemnenie2:target {
+  display: block;
+}
+#zatemnenie3 {
+  background: rgba(102, 102, 102, 0.5);
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: none;
+}
+#zatemnenie3:target {
+  display: block;
+}
+#zatemnenie4 {
+    background: rgba(102, 102, 102, 0.5);
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: none;
+  }
+  #zatemnenie4:target {
+    display: block;
+  }
+  #zatemnenie5 {
+    background: rgba(102, 102, 102, 0.5);
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: none;
+  }
+  #zatemnenie5:target {
+    display: block;
+  }
+  #zatemnenie6 {
+    background: rgba(102, 102, 102, 0.5);
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: none;
+  }
+  #zatemnenie6:target {
+    display: block;
+  }
+.MYresult2 {
+  position: relative;
+  left: 10;
+}
+.MYresult3 {
+  position: relative;
+  left: 10;
+}
+.MYresult4 {
+    position: relative;
+    left: 165;
+  }
+  .MYresult5 {
+    position: relative;
+    left: 165;
+  }
+  .MYresult6 {
+    position: relative;
+    left: 165;
+  }
+.close {
+  display: inline-block;
+
+  font-size: 14pt;
+  font-family: "Rubik", sans-serif;
+  color: rgb(32, 32, 32);
+
+  padding: 0 12px;
+  margin: 10px;
+  margin-top: 260;
+  text-decoration: none;
+  background: #f2f2f2;
+  cursor: pointer;
+}
+.close:hover {
+  background: #e6e6ff;
+}
+
+#input {
+  position: absolute;
+  right: 125;
+  top: 100;
+}
+
+#MYresult {
+  position: relative;
+  left: 10;
+}
+
+#output {
+  position: absolute;
+  font-family: "Rubik", sans-serif;
+  color: rgb(32, 32, 32);
+  text-decoration: none;
+  left: 50;
+  top: 150;
+}
+#output2 {
+  position: absolute;
+  font-family: "Rubik", sans-serif;
+  color: rgb(32, 32, 32);
+  font-size: 25px;
+  text-decoration: none;
+  left: 50;
+  top: 150;
+}
+#bDay {
+  position: absolute;
+  font-family: "Rubik", sans-serif;
+  color: rgb(32, 32, 32);
+  text-decoration: none;
+  left: 50;
+  top: 100;
+}
+
+.button {
+  display: inline-block;
+
+  font-size: 14pt;
+  font-family: "Rubik", sans-serif;
+  color: rgb(32, 32, 32);
+
+  padding: 0 12px;
+  margin: 10px;
+  margin-top: 260;
+  text-decoration: none;
+  background: #f2f2f2;
+  cursor: pointer;
+}
+
+.button:hover {
+  background: #e6e6ff;
+}
+
+.button2 {
+  display: inline-block;
+  
+  font-size: 14pt;
+  font-family: "Rubik", sans-serif;
+  color: rgb(32, 32, 32);
+
+  padding: 0 12px;
+  margin: 10px;
+  margin-top: 20;
+  text-decoration: none;
+  background: #f2f2f2;
+  cursor: pointer;
+  
+}
+
+.button2:hover {
+  background: #e6e6ff;
+}
+
+.close2 {
+    display: inline-block;
+  
+    font-size: 14pt;
+    font-family: "Rubik", sans-serif;
+    color: rgb(32, 32, 32);
+  
+    padding: 0 12px;
+    margin: 10px;
+    margin-top: 200;
+    text-decoration: none;
+    background: #f2f2f2;
+    cursor: pointer;
+  }
+  .close2:hover {
+    background: #e6e6ff;
+  }
+
+  #table{
+    position: relative;
+    
+  }
